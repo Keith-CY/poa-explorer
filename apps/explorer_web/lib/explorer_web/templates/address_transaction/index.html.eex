@@ -9,7 +9,7 @@
         <div class="address__item">
           <dt class="address__item-key"><%= gettext "Balance" %></dt>
           <dd class="address__item-value address__balance" title="<%= @address.hash %>">
-            <%= balance(@address) %> <%= gettext "Ether" %>
+            <%= ExplorerWeb.AddressView.balance(@address) %>
           </dd>
         </div>
       </dl>
@@ -121,10 +121,10 @@
                 </div>
               </td>
               <td class="transactions__column transactions__column--value">
-                <%= value(transaction) %> <%= gettext "Ether" %>
+                <%= ExplorerWeb.TransactionView.value(transaction) %>
               </td>
               <td class="transactions__column transactions__column--value">
-                <%= fee(transaction) %> <%= gettext "Ether" %>
+                <%= ExplorerWeb.TransactionView.fee(transaction) %>
               </td>
             </tr>
           <% end %>

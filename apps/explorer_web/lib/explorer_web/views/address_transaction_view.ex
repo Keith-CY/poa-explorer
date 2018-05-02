@@ -1,10 +1,7 @@
 defmodule ExplorerWeb.AddressTransactionView do
   use ExplorerWeb, :view
 
-  alias ExplorerWeb.{AddressView, TransactionView}
-
-  defdelegate balance(address), to: AddressView
-  defdelegate fee(transaction), to: TransactionView
+  alias ExplorerWeb.TransactionView
 
   def format_current_filter(filter) do
     case filter do
@@ -14,6 +11,5 @@ defmodule ExplorerWeb.AddressTransactionView do
     end
   end
 
-  defdelegate status(transacton), to: TransactionView
-  defdelegate value(transaction), to: TransactionView
+  defdelegate status(transaction), to: TransactionView
 end
